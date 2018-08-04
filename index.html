@@ -1,1 +1,23 @@
-<h1>Hi</h1>
+<script src="js/spacing.js"></script>
+<body onload="calculate()">
+Spawn time (seconds):<br>
+<input type="number" id="spawntime" step="6" value="12" onchange="calculate()"><br>
+Death time (seconds):<br>
+<input type="number" id="deathtime" step="3" value="30" onchange="calculate()"><br>
+Number of food:<br>
+<input type="number" id="numfood" value="1" onchange="calculate()"><br>
+Wave:<br>
+<select id="wave" onchange="calculate()">
+<option value="27">Wave 1</option>
+<option value="32">Wave 2</option>
+<option value="37">Wave 3</option>
+<option value="43">Wave 4</option>
+<option value="49">Wave 5</option>
+<option value="55">Wave 6</option>
+<option value="60">Wave 7/10</option>
+<option value="67">Wave 8</option>
+<option value="76">Wave 9</option>
+</select><br>
+Result:<br>
+<span id="result"/>
+</body>
