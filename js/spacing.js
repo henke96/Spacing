@@ -1,8 +1,9 @@
-const HTML_RESULT_ID = "result"; // textContent
-const HTML_WAVE_ID = "wave"; // value	
-const HTML_SPAWNTIME_ID = "spawntime"; // value
-const HTML_DEATHTIME_ID = "deathtime"; // value
-const HTML_NUMFOOD_ID = "numfood"; // value
+const HTML_RESULT_ID = "result";
+const HTML_WAVE_ID = "wave";	
+const HTML_SPAWNTIME_ID = "spawntime";
+const HTML_DEATHTIME_ID = "deathtime";
+const HTML_NUMFOOD_ID = "numfood";
+const HTML_HEALERHP_ID = "healerhp";
 
 function setResult(res) {
     document.getElementById(HTML_RESULT_ID).textContent = res;
@@ -10,6 +11,7 @@ function setResult(res) {
 
 function calculate() {
     var healerHP = Number(document.getElementById(HTML_WAVE_ID).value);
+	document.getElementById(HTML_HEALERHP_ID).textContent = "(" + healerHP + " hp)";
     
     var spawnTime = Number(document.getElementById(HTML_SPAWNTIME_ID).value);
     if (isNaN(spawnTime) || spawnTime < 12 || spawnTime % 6 !== 0) {
