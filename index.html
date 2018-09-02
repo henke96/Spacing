@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <title>Spacing tool</title>
 <script src="js/spacing.js"></script>
-
+<head>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">
+</head>
 <body onload="calculate()">
-Spawn time (seconds):<br>
-<input type="number" id="spawntime" step="6" value="12" oninput="calculate()"><br>
-Death time (seconds):<br>
-<input type="number" id="deathtime" step="3" value="30" oninput="calculate()"><br>
-Number of food:<br>
-<input type="number" id="numfood" value="1" oninput="calculate()"><br>
-Wave:<br>
-<select id="wave" onchange="calculate()">
-<option value="27">Wave 1</option>
-<option value="32">Wave 2</option>
-<option value="37">Wave 3</option>
-<option value="43">Wave 4</option>
-<option value="49">Wave 5</option>
-<option value="55">Wave 6</option>
-<option value="60">Wave 7/10</option>
-<option value="67">Wave 8</option>
-<option value="76">Wave 9</option>
-</select> <span id="healerhp"></span><br>
-Result:<br>
-<span id="result"></span>
+  <div id="container">
+    <div id="form_div">
+      <span class="boldText">Spawn time (seconds):</span><br>
+      <input type="number" class="form-control" id="spawntime" step="6" value="12" oninput="calculate()"><br>
+      <span class="boldText">Death time (seconds):</span><br>
+      <input type="number" class="form-control" id="deathtime" step="3" value="30" oninput="calculate()"><br>
+      <span class="boldText">Number of food:</span><br>
+      <input type="number" class="form-control" id="numfood" value="1" oninput="calculate()"><br>
+      <span class="boldText">Wave:</span><br>
+      <select class="form-control" id="wave" onchange="calculate()">
+        <option value="27">Wave 1</option>
+        <option value="32">Wave 2</option>
+        <option value="37">Wave 3</option>
+        <option value="43">Wave 4</option>
+        <option value="49">Wave 5</option>
+        <option value="55">Wave 6</option>
+        <option value="60">Wave 7/10</option>
+        <option value="67">Wave 8</option>
+        <option value="76">Wave 9</option>
+      </select><span id="healerhp"></span><br><br>
+       <span class="boldText">Result:</span><br>
+      <span id="result"></span>
+    </div>
+  </div>
 </body>
