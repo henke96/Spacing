@@ -62,8 +62,6 @@ function verifyNumFood(numFood) {
 }
 
 function calculateDeathTime(poisonAfters, healerHp) {
-	console.assert(poisonAfters.length > 0);
-	
 	let spawnTime = poisonAfters[0];
 	let currentTime = spawnTime;
 	let poisonIndex = 0;	
@@ -96,46 +94,13 @@ function calculateDeathTime(poisonAfters, healerHp) {
 	}
 }
 
-function calculateDamage(poisonAfters, untilTime) {
-	console.assert(poisonAfters.length > 0);
-	console.assert(poisonAfters[poisonAfters.length - 1] < untilTime);
-	
-	let totalDamage = 0;
-	let currentTime = poisonAfters[0];
-	let poisonIndex = 0;	
-	let currentStrength = 4;
-	let currentStrengthCount = 0;
-	
-	do {
-		while (poisonAfters[poisonIndex] === currentTime) {
-			totalDamage += 4;
-			currentStrengthCount = 0;
-			currentStrength = 4;
-			++poisonIndex;
-		}
-		
-		totalDamage += currentStrength;
-		if (++currentStrengthCount === 5) {
-			if (--currentStrength < 0) currentStrength = 0;
-			currentStrengthCount = 0;
-		}
-		currentTime += 3;
-	} while (currentTime < untilTime);
-	return totalDamage;
-}
-
 function optimizeUntil(spawnTime, untilTime, numFood) {
-	console.assert(Number.isInteger(spawnTime) && spawnTime % 6 === 0);
-	console.assert(Number.isInteger(untilTime) && untilTime % 3 === 0);
-	console.assert(Number.isInteger(numFood) && numFood >= 1);
-	
 	let poisonAfters = [];
 	
 	let currentTime = spawnTime;
 	while (numFood) {
 		poisonAfters.push(currentTime);
 		let ticksRemaining = (untilTime - currentTime) / 3;
-		// No point letting it go unpoisoned, so cap at 20.
 		let ticksTilNext = Math.min(Math.trunc(ticksRemaining / numFood), 20);
 		currentTime += ticksTilNext * 3;
 		--numFood;
