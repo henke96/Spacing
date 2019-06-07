@@ -6,7 +6,7 @@ const HTML_NUMFOOD_ID = "numfood";
 const HTML_HEALERHP_ID = "healerhp";
 
 function setResult(res) {
-    document.getElementById(HTML_RESULT_ID).textContent = res;
+	document.getElementById(HTML_RESULT_ID).textContent = res;
 }
 
 function verifySpawnTime(spawnTime) {
@@ -110,17 +110,17 @@ function optimizeUntil(spawnTime, untilTime, numFood) {
 }
 
 function calculate() {
-    var healerHp = Number(document.getElementById(HTML_WAVE_ID).value);
-    document.getElementById(HTML_HEALERHP_ID).textContent = "(" + healerHp + " hp)";
-    
-    var spawnTime = Number(document.getElementById(HTML_SPAWNTIME_ID).value);
-    if (!verifySpawnTime(spawnTime)) return;
-    
-    var deathTime = Number(document.getElementById(HTML_DEATHTIME_ID).value);
-    if (!verifyDeathTime(deathTime, spawnTime)) return;
-    
-    var numFood = Number(document.getElementById(HTML_NUMFOOD_ID).value);
-    if (!verifyNumFood(numFood)) return;
+	var healerHp = Number(document.getElementById(HTML_WAVE_ID).value);
+	document.getElementById(HTML_HEALERHP_ID).textContent = "(" + healerHp + " hp)";
+	
+	var spawnTime = Number(document.getElementById(HTML_SPAWNTIME_ID).value);
+	if (!verifySpawnTime(spawnTime)) return;
+	
+	var deathTime = Number(document.getElementById(HTML_DEATHTIME_ID).value);
+	if (!verifyDeathTime(deathTime, spawnTime)) return;
+	
+	var numFood = Number(document.getElementById(HTML_NUMFOOD_ID).value);
+	if (!verifyNumFood(numFood)) return;
 	
 	let poisonAfters = optimizeUntil(spawnTime, deathTime, numFood);
 	let actualDeathTime = calculateDeathTime(poisonAfters, healerHp);
