@@ -58,13 +58,18 @@ function verifyNumFood(numFood) {
 		return false;
 	}
 	
+	if (numFood > 1000) {
+		setResult("Can have max 1000 food.");
+		return false;
+	}
+	
 	return true;
 }
 
 function calculateDeathTime(poisonAfters, healerHp) {
 	let spawnTime = poisonAfters[0];
 	let currentTime = spawnTime;
-	let poisonIndex = 0;	
+	let poisonIndex = 0;
 	let currentStrength = 4;
 	let currentStrengthCount = 0;
 	let nextRegen = currentTime + 60;
