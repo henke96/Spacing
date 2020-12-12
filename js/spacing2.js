@@ -15,8 +15,8 @@ function verifySpawnTime(spawnTime) {
 		return false;
 	}
 	
-	if (spawnTime % 6 !== 0) {
-		setResult("Spawn time has to be a multiple of 6 seconds.");
+	if (spawnTime % 3 !== 0) {
+		setResult("Spawn time has to be a multiple of 3 seconds.");
 		return false;
 	}
 	
